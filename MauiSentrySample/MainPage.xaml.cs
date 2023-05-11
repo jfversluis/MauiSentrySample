@@ -1,4 +1,6 @@
-﻿namespace MauiSentrySample
+﻿using Sentry;
+
+namespace MauiSentrySample
 {
     public partial class MainPage : ContentPage
     {
@@ -19,6 +21,10 @@
                 CounterBtn.Text = $"Clicked {count} times";
 
             SemanticScreenReader.Announce(CounterBtn.Text);
+
+            //SentrySdk.CaptureMessage(CounterBtn.Text);
+
+            throw new Exception("Don't forget to like & subscribe");
         }
     }
 }

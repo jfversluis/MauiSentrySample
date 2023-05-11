@@ -9,6 +9,11 @@ namespace MauiSentrySample
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseSentry(options =>
+                {
+                    # warning Add your own Sentry endpoint here
+                    options.Dsn = "https://foo@bar.ingest.sentry.io/1337";
+                })
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
